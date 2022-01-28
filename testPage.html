@@ -22,12 +22,17 @@
         });
       }
       function initMap() {
-        const uluru = { lat: -25.344, lng: 131.036 };
-        const map = new google.maps.Map(document.getElementById("map"), {
+        let uluru={ lat: -25.344, lng: 131.036 };
+        const points = [{ lat: -25.344, lng: 131.036 },{ lat: -23.344, lng: 131.136 },,{ lat: -24.344, lng: 132.136 }];
+        let map = new google.maps.Map(document.getElementById("map"), {
           zoom: 4,
           center: uluru,
         });
-        addMarker(map,uluru);
+        for(let i=0;i<points.length;i++)
+        {
+          addMarker(map,points[i]);
+        }
+        
       }
 
 
